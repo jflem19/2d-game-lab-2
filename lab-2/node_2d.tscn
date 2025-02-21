@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf1uom4ox3awn"]
+[gd_scene load_steps=4 format=3 uid="uid://bf1uom4ox3awn"]
 
 [ext_resource type="Texture2D" uid="uid://863020tofple" path="res://png-clipart-car-car-white.png" id="1_jkvd7"]
 [ext_resource type="Script" path="res://png_clipart_car_car_white.gd" id="2_vwemh"]
+[ext_resource type="Texture2D" uid="uid://dkaqg4dnuu1pe" path="res://house.png" id="3_w6xsb"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,8 @@ position = Vector2(355, 228.25)
 scale = Vector2(0.828889, 0.594815)
 texture = ExtResource("1_jkvd7")
 script = ExtResource("2_vwemh")
+
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(1316, 68.5)
+scale = Vector2(1.59333, 1.58808)
+texture = ExtResource("3_w6xsb")
