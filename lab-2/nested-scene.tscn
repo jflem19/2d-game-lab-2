@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuoog8viskb2u"]
+
+[ext_resource type="PackedScene" uid="uid://bf1uom4ox3awn" path="res://node_2d.tscn" id="1_b2nnj"]
+[ext_resource type="Texture2D" uid="uid://c0072vt8e7l1m" path="res://Room.png" id="2_e66mh"]
+
+[node name="Node2D" instance=ExtResource("1_b2nnj")]
+
+[node name="Room" type="Sprite2D" parent="." index="2"]
+position = Vector2(-1214, -550)
+scale = Vector2(1.46667, 1.46667)
+texture = ExtResource("2_e66mh")
