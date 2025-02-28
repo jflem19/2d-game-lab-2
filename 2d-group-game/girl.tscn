@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbww1j1qaxopj"]
+
+[ext_resource type="Texture2D" uid="uid://botxnt5xvi08g" path="res://girl.png" id="1_3bwko"]
+
+[node name="Girl" type="Sprite2D"]
+position = Vector2(563, 289)
+texture = ExtResource("1_3bwko")
