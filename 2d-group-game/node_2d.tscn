@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://drn7ol5vmdbom"]
+
+[ext_resource type="Texture2D" uid="uid://hpke2kls4byv" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Walk.png" id="1_7oj4q"]
+[ext_resource type="Texture2D" uid="uid://bfgihq776prk8" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Girl_2/Idle.png" id="2_7ybr3"]
+[ext_resource type="Script" path="res://girl_mainMOVING.gd" id="3_3r4ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5vl"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh6y8"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n25bt"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kpch"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epoui"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqh7x"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi82q"]
+atlas = ExtResource("2_7ybr3")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0v8nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs5vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh6y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n25bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kpch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epoui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqh7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi82q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Walk" type="Sprite2D" parent="."]
+position = Vector2(1604, 1863)
+texture = ExtResource("1_7oj4q")
+
+[node name="GirlMain" type="AnimatedSprite2D" parent="."]
+position = Vector2(673.143, 444)
+scale = Vector2(3.01339, 2.9375)
+sprite_frames = SubResource("SpriteFrames_0v8nr")
+frame_progress = 0.95035
+script = ExtResource("3_3r4ph")
