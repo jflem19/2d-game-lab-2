@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://drn7ol5vmdbom"]
+[gd_scene load_steps=13 format=3 uid="uid://drn7ol5vmdbom"]
 
 [ext_resource type="Texture2D" uid="uid://hpke2kls4byv" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Walk.png" id="1_7oj4q"]
 [ext_resource type="Texture2D" uid="uid://bfgihq776prk8" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Girl_2/Idle.png" id="2_7ybr3"]
 [ext_resource type="Script" path="res://girl_mainMOVING.gd" id="3_3r4ph"]
+[ext_resource type="PackedScene" uid="uid://b00drf2ukepuq" path="res://platform.tscn" id="4_8csvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gs5vl"]
 atlas = ExtResource("2_7ybr3")
@@ -71,5 +72,8 @@ texture = ExtResource("1_7oj4q")
 position = Vector2(673.143, 444)
 scale = Vector2(3.01339, 2.9375)
 sprite_frames = SubResource("SpriteFrames_0v8nr")
-frame_progress = 0.95035
+frame_progress = 0.37496
 script = ExtResource("3_3r4ph")
+
+[node name="Platform" parent="." instance=ExtResource("4_8csvv")]
+position = Vector2(579, 383)
