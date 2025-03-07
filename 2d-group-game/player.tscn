@@ -1,14 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://drn7ol5vmdbom"]
+[gd_scene load_steps=25 format=3 uid="uid://drn7ol5vmdbom"]
 
-[ext_resource type="Texture2D" uid="uid://hpke2kls4byv" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Walk.png" id="1_7oj4q"]
 [ext_resource type="Texture2D" uid="uid://bfgihq776prk8" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Girl_2/Idle.png" id="2_7ybr3"]
+[ext_resource type="Texture2D" uid="uid://bu8dxnd4fuvmn" path="res://craftpix-net-242415-free-schoolgirls-anime-character-pixel-sprite-pack/Girl_2/Walk.png" id="2_pcjlr"]
 
 [sub_resource type="GDScript" id="GDScript_2cej2"]
 script/source = "extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -800.0
 
 
 func _physics_process(delta: float) -> void:
@@ -24,86 +24,180 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction:
+		if direction == -1:
+			$AnimatedSprite2D.flip_h = true
+		elif direction == 1:
+			$AnimatedSprite2D.flip_h = false
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play(\"walk\")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		$AnimatedSprite2D.play(\"default\")
 	move_and_slide()
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gs5vl"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty2nt"]
+radius = 30.0
+height = 94.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipfku"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wh6y8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5u08"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n25bt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_apike"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kpch"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvr1n"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_epoui"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpegs"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqh7x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmotp"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(640, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mi82q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgcrt"]
 atlas = ExtResource("2_7ybr3")
 region = Rect2(768, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0v8nr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5td5q"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj4kd"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcxqx"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8fpc"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpahb"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2h58"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwbc8"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrbga"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1bb7"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ord40"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhn0w"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8jbx"]
+atlas = ExtResource("2_pcjlr")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpmiq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gs5vl")
+"texture": SubResource("AtlasTexture_ipfku")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wh6y8")
+"texture": SubResource("AtlasTexture_l5u08")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n25bt")
+"texture": SubResource("AtlasTexture_apike")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5kpch")
+"texture": SubResource("AtlasTexture_cvr1n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_epoui")
+"texture": SubResource("AtlasTexture_qpegs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uqh7x")
+"texture": SubResource("AtlasTexture_rmotp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mi82q")
+"texture": SubResource("AtlasTexture_dgcrt")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5td5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj4kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcxqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8fpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpahb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2h58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwbc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrbga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1bb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ord40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhn0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8jbx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty2nt"]
-radius = 40.0
-height = 248.0
 
 [node name="character" type="CharacterBody2D"]
 script = SubResource("GDScript_2cej2")
 
-[node name="Walk" type="Sprite2D" parent="."]
-position = Vector2(1604, 1863)
-texture = ExtResource("1_7oj4q")
-
-[node name="GirlMain" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3.01339, 2.9375)
-sprite_frames = SubResource("SpriteFrames_0v8nr")
-frame_progress = 0.185204
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 75)
+position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_ty2nt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bpmiq")
+autoplay = "default"
+frame_progress = 0.956761
+speed_scale = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
