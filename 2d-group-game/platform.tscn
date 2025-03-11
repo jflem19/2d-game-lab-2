@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://b00drf2ukepuq"]
+[gd_scene load_steps=7 format=4 uid="uid://b00drf2ukepuq"]
 
 [ext_resource type="Texture2D" uid="uid://d2e52fkw7ufj4" path="res://free-swamp-game-tileset-pixel-art/1 Tiles/Tileset.png" id="1_1aky4"]
 [ext_resource type="PackedScene" uid="uid://drn7ol5vmdbom" path="res://player.tscn" id="2_7njeq"]
@@ -458,6 +458,24 @@ texture = ExtResource("1_1aky4")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4w1ho")
 
+[sub_resource type="GDScript" id="GDScript_85xj0"]
+resource_name = "Respawncode"
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vynjo"]
+size = Vector2(9425, 174)
+
 [node name="Platform" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -467,3 +485,10 @@ tile_set = SubResource("TileSet_1836k")
 
 [node name="character" parent="." instance=ExtResource("2_7njeq")]
 position = Vector2(210, -81)
+
+[node name="KillBox" type="Area2D" parent="."]
+script = SubResource("GDScript_85xj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
+position = Vector2(4323.5, 409)
+shape = SubResource("RectangleShape2D_vynjo")
