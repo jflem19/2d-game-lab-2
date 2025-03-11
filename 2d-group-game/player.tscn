@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty2nt"]
-radius = 30.0
-height = 94.0
+radius = 20.0
+height = 74.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipfku"]
 atlas = ExtResource("2_7ybr3")
@@ -194,9 +194,9 @@ position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_ty2nt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_bpmiq")
 autoplay = "default"
-frame_progress = 0.706682
 speed_scale = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
