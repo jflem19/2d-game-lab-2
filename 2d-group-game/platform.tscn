@@ -492,3 +492,5 @@ script = SubResource("GDScript_85xj0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
 position = Vector2(4323.5, 409)
 shape = SubResource("RectangleShape2D_vynjo")
+
+[connection signal="body_entered" from="KillBox" to="KillBox" method="_on_body_entered"]
