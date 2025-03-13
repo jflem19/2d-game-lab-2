@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5ql7pluvwcbt"]
+
+[ext_resource type="Texture2D" uid="uid://dbewxxmnl28st" path="res://back.png" id="1_1uu1q"]
+[ext_resource type="Texture2D" uid="uid://b5ttqpiuc780b" path="res://baby.png" id="2_2rrky"]
+[ext_resource type="Texture2D" uid="uid://67nkorloqbsi" path="res://eye.png" id="3_0cnfg"]
+[ext_resource type="Texture2D" uid="uid://cirnueuywxuww" path="res://troll.png" id="4_ij4mr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(613, 351)
+scale = Vector2(2.02396, 1.14856)
+texture = ExtResource("1_1uu1q")
+
+[node name="Baby" type="Sprite2D" parent="."]
+position = Vector2(122, 526)
+scale = Vector2(0.448454, 0.450617)
+texture = ExtResource("2_2rrky")
+
+[node name="Eye" type="Sprite2D" parent="."]
+position = Vector2(988, 205)
+scale = Vector2(0.291992, 0.283699)
+texture = ExtResource("3_0cnfg")
+
+[node name="Troll" type="Sprite2D" parent="."]
+position = Vector2(996, 520)
+scale = Vector2(0.493007, 0.489267)
+texture = ExtResource("4_ij4mr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 315.0
+offset_top = 130.0
+offset_right = 506.0
+offset_bottom = 264.0
+scale = Vector2(3, 3)
+text = "YOU ESCAPED...
+
+OR DID YOU?
+
+DON'T TURN AROUND."
