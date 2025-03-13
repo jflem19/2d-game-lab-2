@@ -477,7 +477,7 @@ func _on_body_entered(body: Node2D) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vynjo"]
-size = Vector2(9425, 174)
+size = Vector2(23761, 174)
 
 [node name="Platform" type="Node2D"]
 
@@ -504,7 +504,7 @@ autoplay = true
 script = SubResource("GDScript_85xj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
-position = Vector2(4323.5, 409)
+position = Vector2(11491.5, 409)
 shape = SubResource("RectangleShape2D_vynjo")
 
 [node name="Button" type="Button" parent="."]
